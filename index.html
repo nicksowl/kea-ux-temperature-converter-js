@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Temperature Converter</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header>
+      <h1>Temperature converter</h1>
+    </header>
+
+    <main>
+      <section id="converter">
+        <form onsubmit="event.preventDefault()">
+          <!-- INPUT -->
+          <label for="input">Convert</label><br />
+          <input
+            type="number"
+            name="input"
+            id="input"
+            required
+            autofocus
+            step="0.01"
+            pattern="0-9"
+            placeholder="0"
+          />
+          <br />
+
+          <div class="selection">
+            <!-- FROM -->
+            <div class="selection-from">
+              <label for="from">From</label><br />
+              <select id="from" name="from" size="3" required>
+                <option selected="selected">Celsius</option>
+                <option>Fahrenheit</option>
+                <option>Kelvin</option>
+                <option></option>
+              </select>
+            </div>
+
+            <!-- TO -->
+            <div class="selection-to">
+              <label for="to">To</label><br />
+              <select id="to" name="to" size="3" required>
+                <option>Celsius</option>
+                <option selected="selected">Fahrenheit</option>
+                <option>Kelvin</option>
+                <option></option>
+              </select>
+            </div>
+          </div>
+
+          <div id="submit-btn">
+            <!-- CALCULATE -->
+            <input
+              type="submit"
+              value="Calculate"
+              id="calculate"
+              onclick="temp_converter(); showResult();"
+            />
+          </div>
+        </form>
+      </section>
+
+      <div id="result-container">
+        <div id="result">
+          <p id="result-input">111.111</p>
+          <p id="result-from">C^</p>
+          <p>=</p>
+          <p id="result-output">234.42</p>
+          <p id="result-to">^K</p>
+        </div>
+      </div>
+    </main>
+
+    <footer>
+      <p>&copy 2021 Nikolai Baida</p>
+    </footer>
+
+    <script src="script.js" defer></script>
+  </body>
+</html>
